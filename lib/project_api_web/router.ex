@@ -14,9 +14,11 @@ defmodule ProjectApiWeb.Router do
   end
 
   scope "/", ProjectApiWeb do
-    pipe_through :browser
+    pipe_through :api
 
     get "/", PageController, :index
+
+    resources "/projects", ProjectController
   end
 
   # Other scopes may use custom stacks.
